@@ -3,9 +3,10 @@
 ## Loan Eligibility Prediction Application
 
 [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://midtermloan-model.streamlit.app)  
-OR  
+OR
+```
 https://midtermloan-model.streamlit.app
-
+```
 
 ---
 
