@@ -43,21 +43,23 @@ def collect_user_input():
     with col1:
         st.subheader("Personal Information")
         
-        features['person_age'] = st.slider("Age", 
+        features['person_age'] = st.number_input("Age", 
                                           min_value=FEATURE_RANGES['person_age'][0], 
                                           max_value=FEATURE_RANGES['person_age'][1], 
-                                          value=FEATURE_RANGES['person_age'][0])
+                                          value=FEATURE_RANGES['person_age'][0],
+                                          step=1)
         
-        features['person_income'] = st.slider("Annual Income ($)", 
+        features['person_income'] = st.number_input("Annual Income ($)", 
                                              min_value=FEATURE_RANGES['person_income'][0], 
                                              max_value=FEATURE_RANGES['person_income'][1], 
                                              value=FEATURE_RANGES['person_income'][0],
                                              step=1000)
         
-        features['person_emp_exp'] = st.slider("Employment Experience (years)", 
+        features['person_emp_exp'] = st.number_input("Employment Experience (years)", 
                                              min_value=FEATURE_RANGES['person_emp_exp'][0], 
                                              max_value=FEATURE_RANGES['person_emp_exp'][1], 
-                                             value=FEATURE_RANGES['person_emp_exp'][0])
+                                             value=FEATURE_RANGES['person_emp_exp'][0],
+                                             step=1)
         
         features['person_gender'] = st.radio("Gender", ['female', 'male'])
         
@@ -67,37 +69,40 @@ def collect_user_input():
         features['person_home_ownership'] = st.selectbox("Home Ownership", 
                                                        ['RENT', 'MORTGAGE', 'OWN', 'OTHER'])
         
-        features['cb_person_cred_hist_length'] = st.slider("Credit History Length (years)", 
+        features['cb_person_cred_hist_length'] = st.number_input("Credit History Length (years)", 
                                                          min_value=FEATURE_RANGES['cb_person_cred_hist_length'][0], 
                                                          max_value=FEATURE_RANGES['cb_person_cred_hist_length'][1], 
-                                                         value=FEATURE_RANGES['cb_person_cred_hist_length'][0])
+                                                         value=FEATURE_RANGES['cb_person_cred_hist_length'][0],
+                                                         step=1)
         
-        features['credit_score'] = st.slider("Credit Score", 
+        features['credit_score'] = st.number_input("Credit Score", 
                                            min_value=FEATURE_RANGES['credit_score'][0], 
                                            max_value=FEATURE_RANGES['credit_score'][1], 
                                            value=FEATURE_RANGES['credit_score'][0],
-                                           step=10)
+                                           step=1)
 
     with col2:
         st.subheader("Loan Information")
         
-        features['loan_amnt'] = st.slider("Loan Amount ($)", 
+        features['loan_amnt'] = st.number_input("Loan Amount ($)", 
                                         min_value=FEATURE_RANGES['loan_amnt'][0], 
                                         max_value=FEATURE_RANGES['loan_amnt'][1], 
                                         value=FEATURE_RANGES['loan_amnt'][0],
-                                        step=500)
+                                        step=100)
         
-        features['loan_int_rate'] = st.slider("Interest Rate (%)", 
+        features['loan_int_rate'] = st.number_input("Interest Rate (%)", 
                                            min_value=FEATURE_RANGES['loan_int_rate'][0], 
                                            max_value=FEATURE_RANGES['loan_int_rate'][1], 
                                            value=FEATURE_RANGES['loan_int_rate'][0],
-                                           step=0.05)
+                                           step=0.01,
+                                           format="%.2f")
         
-        features['loan_percent_income'] = st.slider("Loan Percent of Income", 
+        features['loan_percent_income'] = st.number_input("Loan Percent of Income", 
                                                  min_value=FEATURE_RANGES['loan_percent_income'][0], 
                                                  max_value=FEATURE_RANGES['loan_percent_income'][1], 
                                                  value=FEATURE_RANGES['loan_percent_income'][0],
-                                                 step=0.01)
+                                                 step=0.01,
+                                                 format="%.2f")
         
         features['loan_intent'] = st.selectbox("Loan Intent", 
                                             ['EDUCATION', 'MEDICAL', 'VENTURE', 'PERSONAL', 'DEBTCONSOLIDATION', 'HOMEIMPROVEMENT'])
