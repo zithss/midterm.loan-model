@@ -10,5 +10,8 @@ https://midtermloan-model.streamlit.app
 
 ---
 
-🚀 **Features**: Predict loan eligibility using machine learning models.  
-📌 **Note**: Use the link above to access the live Streamlit deployment.
+🚀 **Features**:  
+- Predict loan approval eligibility using input features such as age, income, employment, education, credit history, and loan details.  
+- Built with machine learning and deployed using **Streamlit**.  
+
+📌 **Note**: This was my **first hands-on model deployment** experience, focused on learning how to serve ML models as interactive web apps.  
